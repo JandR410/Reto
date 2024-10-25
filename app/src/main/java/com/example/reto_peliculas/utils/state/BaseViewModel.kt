@@ -7,6 +7,7 @@ import com.example.reto_peliculas.utils.base.ScreenEvent
 import com.example.reto_peliculas.utils.base.ScreenState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
 
 abstract class BaseViewModel<State : ScreenState, Action : ScreenAction, Event : ScreenEvent>(
@@ -16,7 +17,7 @@ abstract class BaseViewModel<State : ScreenState, Action : ScreenAction, Event :
     abstract fun handleScreenActions(action: Action)
 
     private val _eventsFlow = MutableSharedFlow<Event>()
-    val eventsFlow: Flow<Event>
+    val eventsFlow: SharedFlow<Event>
         get() = _eventsFlow
 
 
