@@ -1,4 +1,4 @@
-package com.example.core.presentation.component
+package com.example.reto_peliculas.presentation.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

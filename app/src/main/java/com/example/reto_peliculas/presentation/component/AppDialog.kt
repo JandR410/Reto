@@ -1,4 +1,4 @@
-package com.example.core.presentation.component
+package com.example.reto_peliculas.presentation.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -16,7 +16,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.example.reto_peliculas.presentation.component.AppButton
 
 @Composable
 fun AppDialog(
@@ -53,8 +52,7 @@ fun AppDialog(
                 firstButtonText?.let { buttonText ->
                     AppButton(
                         onClick = onFirstButtonClicked,
-                        modifier = Modifier.padding(top = 24.dp),
-                        //colors = ButtonDefaults.buttonColors(containerColor = BottomColor)
+                        modifier = Modifier.padding(top = 24.dp)
                     ) {
                         Text(
                             text = buttonText,

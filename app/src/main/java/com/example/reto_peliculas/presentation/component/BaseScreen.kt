@@ -10,8 +10,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.core.presentation.component.AppDialog
-import com.example.core.presentation.component.NoInternetScreen
 import com.example.reto_peliculas.utils.base.BaseScreenState
 import com.example.reto_peliculas.utils.state.ButtonState
 import com.example.reto_peliculas.utils.state.DialogState
