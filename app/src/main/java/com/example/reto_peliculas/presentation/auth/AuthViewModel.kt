@@ -1,5 +1,6 @@
 package com.example.reto_peliculas.presentation.auth
 
+import com.example.reto_peliculas.usecase.AuthUseCase
 import com.example.reto_peliculas.utils.state.BaseViewModel
 import com.example.reto_peliculas.utils.state.ButtonState
 import com.example.reto_peliculas.utils.state.DialogState
@@ -8,7 +9,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
-
+    private val authUseCase: AuthUseCase
 ) : BaseViewModel<AuthState, AuthAction, AuthEvent>(initialState = AuthState.buildInitialState()) {
 
     override fun handleScreenActions(action: AuthAction) {
@@ -34,7 +35,8 @@ class AuthViewModel @Inject constructor(
     }
 
     private fun validateCredential() {
-        if (state.user == "Admin" && state.password == "Password*123")
+        val validate = authUseCase(state.user, state.password)
+        if (validate)
             sendEvent(AuthEvent.NavigateToHome)
         else
             dialogError()
@@ -44,7 +46,7 @@ class AuthViewModel @Inject constructor(
         showDialog(
             DialogState(
                 title = "Error",
-                message = "Las credenciales no coinciden",
+                message = "Las credenciales no son correctas",
                 firstButton = ButtonState(
                     text = "Volver a intentar",
                     onButtonClicked = {

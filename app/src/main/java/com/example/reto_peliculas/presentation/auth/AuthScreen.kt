@@ -33,7 +33,7 @@ fun AuthScreen(
     state: AuthState,
     screenHandler: (AuthAction) -> Unit,
     navigate: () -> Unit,
-    events: SharedFlow<AuthEvent>,
+    events: SharedFlow<AuthEvent>
 ) {
     LaunchedEffect(key1 = Unit) {
         events.collect { event ->
@@ -109,6 +109,6 @@ fun AuthScreenPreview() {
         state = AuthState.buildInitialState(),
         screenHandler = {},
         navigate = {},
-        events = MutableSharedFlow(),
+        events = MutableSharedFlow()
     )
 }
