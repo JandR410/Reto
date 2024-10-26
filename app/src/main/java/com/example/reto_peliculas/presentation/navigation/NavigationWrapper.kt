@@ -26,7 +26,7 @@ import com.example.reto_peliculas.presentation.home.HomeViewModel
 fun NavigationWrapper() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "/home") {
+    NavHost(navController = navController, startDestination = "/login") {
 
         composable("/login") {
             val viewModel: AuthViewModel = hiltViewModel()
