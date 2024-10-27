@@ -68,8 +68,9 @@ dependencies {
 
     implementation(libs.room.paging)
 
-    implementation("com.squareup.okhttp3:okhttp:4.10.0") // Versión más reciente de OkHttp
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    testImplementation("org.mockito:mockito-core:5.2.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
